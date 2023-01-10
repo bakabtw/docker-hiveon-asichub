@@ -3,6 +3,8 @@ This is Dockerfile for dockerizing [Hiveon ASIC Hub](https://hiveon.com/asichub/
 
 Since all my services run in docker environment, I wanted to avoid running any services on bare metal.
 
+The solution with `install.sh` is ugly, but it works.
+
 # Prerequisites
 You need to install docker buildx (https://docs.docker.com/build/building/multi-platform/) to build multiarch images.
 
@@ -29,3 +31,6 @@ After that, open
 ```
 http://locahost:8800
 ```
+
+# TODO
+- Update `install.sh`
