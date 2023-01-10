@@ -1,0 +1,31 @@
+# Purpose
+This is Dockerfile for dockerizing [Hiveon ASIC Hub](https://hiveon.com/asichub/).
+
+Since all my services run in docker environment, I wanted to avoid running any services on bare metal.
+
+# Prerequisites
+You need to install docker buildx (https://docs.docker.com/build/building/multi-platform/) to build multiarch images.
+
+# Building
+Run the following command:
+
+```
+docker buildx build --platform=linux/amd64 -t asic-hub --output type=docker .
+```
+
+Supported platforms:
+- linux/amd64
+- linux/arm/v7
+- linux/arm64
+
+# Running
+Starting a docker container:
+
+```
+docker run --name asic-hub -p 8800:8800 asic-hub
+```
+
+After that, open 
+```
+http://locahost:8800
+```
