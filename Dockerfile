@@ -17,4 +17,7 @@ RUN ./install.sh -y --no-restart
 
 CMD ["/opt/asic-hub/hub", "-c", "/etc/asic-hub/config.toml"]
 
+VOLUME /etc/asic-hub/
+VOLUME /var/lib/asic-hub
+
 EXPOSE 8800
