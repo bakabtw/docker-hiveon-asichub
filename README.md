@@ -32,5 +32,27 @@ After that, open
 http://locahost:8800
 ```
 
+# Docker-compose
+Here's a sample `docker-compose.yml` file.
+
+```
+version: '3'
+
+services:
+  asic-hub:
+    image: bakabtw/hiveon-asic-hub:latest
+    container_name: asic-hub
+    restart: unless-stopped
+    volumes:
+      - asichub-conf:/etc/asic-hub
+      - asichub-lib:/var/lib/asic-hub
+    ports:
+      - "8800:8800"
+
+volumes:
+  asichub-conf:
+  asichub-lib:
+```
+
 # TODO
 - Update `install.sh`
